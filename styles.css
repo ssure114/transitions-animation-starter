@@ -85,11 +85,11 @@ body {
     background: linear-gradient(300deg,#9dbeae,#eef1ee,#3a524f);
     background-size: 180% 180%;
     /* TO DO: Uncomment the line below and keyframes to add an animated gradient to the page background. I used https://animated-gradient-background-generator.netlify.app/ to generate this gradient using the colors for the site */
-    /* animation: gradient-animation 18s ease infinite; */
+     animation: gradient-animation 18s ease infinite; 
 }
 
 /* TO DO: Uncomment the keyframes below */
-/* @keyframes gradient-animation {
+ @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
     }
@@ -99,7 +99,7 @@ body {
     100% {
         background-position: 0% 50%;
     }
-} */
+} 
 
 /* ---------- SKIP LINK STYLES ---------- */
 /* ----- From: https://webaim.org/techniques/css/invisiblecontent/ ----- */
@@ -429,11 +429,19 @@ details[open] summary{
 
 /* TO DO: Add an animation to this image named "spin" that runs for 2.5 seconds, using linear easing, and will run continuously without stopping */
 #animate1 img.animate{
-    
+    animation: spin 2.5s linear infinite;
 }
 
 /* TO DO: Create an @keyframes rule here named "spin" that animates the image above by rotating it. It should start at its original rotation and end at 360 degrees */
-
+@keyframes spin{
+    from{ 
+         transform: rotate(0deg);
+    }
+    to{  
+        transform: rotate(360deg);
+        
+    }
+}
 
 /* Second dropdown animation - heart scale */
 #animate2 > img{
@@ -444,11 +452,21 @@ details[open] summary{
 
 /* TO DO: Add an animation to this image named "grow" that runs for two seconds, uses ease-in-out as its timing function, and runs continuously without stopping */
 #animate2 img.animate{
-    
+    animation: grow 2s ease-in-out infinite;
 }
 
 /* TO DO: Add an @keyframes rule here named "grow" that animates the image by scaling it. The scale should be at 1 to start and end, and should scale to 1.5 halfway through the animation */
-
+@keyframes grow{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 /* Third dropdown animation - Timing Example  */
 /* This has been completed for you and is included as an example only */
@@ -480,15 +498,17 @@ details[open] summary{
 
 /* TO DO: Add an animation here named "slide-in" that runs for three seconds, using the ease-in-out timing function, will run only three times, and uses the alternate animation direction */
 #animate4 img.animate{
-    
+    animation: slide-in 3s ease-in-out 3 alternate;
 }
 
 @keyframes slide-in {
     from {
         /* TO DO: The element should begin at its normal place in the document */
+        transform: translate(0,0);
     }
 
     to {
+         transform: translate(50vw,0);
         /* TO DO: The element should end 50vw in the x-direction (horizontal) and should not move at all in the y-direction (vertical) */
     }
 }
@@ -530,7 +550,7 @@ details[open] summary{
 
 /* TO DO: Add a transition to this element for the box shadow that runs for 200 milliseconds */
 #link1{
-    
+    transition: box-shadow 200ms;
 }
 
 #link1:hover{
@@ -540,6 +560,7 @@ details[open] summary{
 /* TO DO: Add a transition to this element for all properties that will run for 300 milliseconds */
 #link2{
     border-radius: 1rem;
+    transition: all 300ms;
 }
 
 #link2:hover{
@@ -577,6 +598,7 @@ details[open] summary{
 /* TO DO: Add a transformation here so that the SVG grows to be 2 times its normal size on hover */
 #link3:hover svg{
     stroke: var(--wht);
+    transform: scale(2);
 }
 
 #link4{
@@ -594,7 +616,7 @@ details[open] summary{
 
 /* TO DO: Add a transformation here so that this image will spin in a complete circle on hover */
 #link4:hover svg{
-    
+    transform: rotate(360deg);
 }
 
 
